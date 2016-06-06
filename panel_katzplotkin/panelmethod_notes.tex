@@ -21,7 +21,17 @@ This formulation does not uniquely describe a solution since a large number of s
 
 \noindent \textbf{Unsteady Incompressible Potential Flow} \\
 
+\noindent Devenport - Panel methods for airfoils in turbulent flow \\
 
-
+\noindent The blade surface is discretized into a polygon with N vertices \textbf{$y^{(n)}$} and the variation of the vortex sheet strength around that surface is discretized as a piecewise linear function with values $\gamma_n$ at the vertices (i.e a classical linear vortex panel method, see Katz and Plotkin for example.) The surface integration can be performed analytically over each polygon side (or `panel'), simplifying the integral over the contour C into a sum of these N results. With these simplifications, the integral equation for the boundary conditions becomes an algebraic expression containing the N unknown vortex sheet strengths $\gamma_n$. These are determined together and the strength of the most recently shed wake vortex. The N+1 constraints are obtained from the Kutta condition, the Kelvin condition and \emph{by enforcing the non-penetration condition at the center point of all but one of the panels (the conditions on the remaining panel being redundant)}.\\\\
+The instantaneous lift per unit span is determined at each time step by integrating the pressure on the blade surface determined through the unsteady Bernoulli equation, i.e.\\
+\begin{equation}
+L = - \oint_C p dx_1 = \frac{1}{2}\rho \oint_C  v^2 dx_{1} + \rho \oint_C \frac{d \phi}{dt} dx_{1}
+\end{equation}
+where $\phi$ is the conventionally defined velocity potential. This is most easily calculated directly from the vortex sheet strength as:\\
+\begin{equation}
+L = \frac{1}{2} \rho \oint_C \gamma^2 dx_1 + \rho \frac{d}{dt} \oint_C \int_{0}^{s} \gamma(s') ds' dx_1
+\end{equation}
+where all integrals are taken around the blade surface contour. 
 
 \end{document}
