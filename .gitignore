@@ -2,5 +2,8 @@
 /prediction_highfreq_thickness_lysak/prediction_highfreq_thickness_lysak.log	
 /prediction_highfreq_thickness_lysak/prediction_highfreq_thickness_lysak.pdf
 /prediction_highfreq_thickness_lysak/prediction_highfreq_thickness_lysak.synctex.gz
-
+*.aux
+*.log
+*.pdf
+*.gz
 
