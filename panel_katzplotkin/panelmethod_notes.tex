@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[letterpaper, portrait, margin = 1in]{geometry}
+
+\begin{document}
+\noindent\textbf{Panel Methods}\\ \\
+Consider a body with known boundaries $S_B$ submerged in a potential flow. The flow of interest is in the outer region of the given volume where the incompressible, irrotational continuity equation in the body's frame of reference in terms of the total potential $\phi$ is: \\
+\begin{equation}
+\nabla^2 \phi = 0
+\end{equation}
+Following Green's identity, the general solution to Equation (1) can be constructed by a sum of source $\sigma$ and doublet $\mu$ distributions placed on the boundary $S_B$:\\
+\begin{equation}
+\phi(x,y,z) = - \frac{1}{4\pi} \int_{S_B} \Bigg[ \sigma \Bigg( \frac{1}{r} \Bigg)- \mu \textbf{n} \bullet \nabla \Bigg( \frac{1}{r} \Bigg) \Bigg] dS + \phi_{\infty}
+\end{equation}
+Here the vector \textbf{n} points in the direction of the potential jump $\mu$ which is normal to $S_B$ and positive oustide of V and $\phi_{\infty}$ is the free stream potential:
+\begin{equation}
+\phi = U_{\infty} x + V_{\infty} y + W_{\infty} z
+\end{equation}
+This formulation does not uniquely describe a solution since a large number of sources and doublet distributions will satisfy a given set of boundary conditions. Therefore, an arbitrary choice has to be made in order to select the desirable combination of such singularity elements. For simulating the effects of thickness, source elements can be used, whereas for lifting problems, antisymmetric terms such as the double (or vortex) can be used. To uniquely define the solution of this problem, first the boundary conditions of the zero flow normal to the surface must be applied. In the general case of three-dimensional flows, specifying the boundary conditions will not immediately yield a unique solution because of two problems. First, an arbitrary decision has to be made in regard to the ``right" combination of source and double distributions. Secondly, some physical considerations need to be introduced in order to fix the amount of circulation around the surface $S_B$. 
+
+\noindent Note that the above considerations were for steady flow analysis. \\
+
+\noindent \textbf{Unsteady Incompressible Potential Flow} \\
+
+
+
+
+\end{document}
