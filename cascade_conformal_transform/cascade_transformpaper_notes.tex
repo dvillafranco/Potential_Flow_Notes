@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[letterpaper, margin = 1 in]{geometry}
+
+\begin{document}
+
+\noindent \textbf{A simple method for potential flow simulation of cascades}\\\\
+
+\noindent \textbf{Introduction}
+
+\noindent The problem of potential is well studied. The problem has been solved by using either a sequence of conformal transformations or by using surface singularity methods; the latter also referred to as panel methods in the fluid dynamics community. Usually the case that the infinite row of blades is transformed into a single closed contour. Then, that closed contour is transformed into the shape of a circle using a series of transformations. This process is not amenable for computer programming. \\\\
+Surface singularity methods employ an alternate route to solve the potential flow problem in cascades by distributing singularities such as vortices and/or sources on the blade contour. The paper details a way to solve the potential flow through a cascade problem by using a combination of a single conformal transformation and a standard higher order vortex panel method such as the one used to solve the potential flow past an isolated airfoil.\\\\
+
+\noindent \textbf{Methodology}\\
+Method will work for any infinite linear cascade composed of arbitrary shaped blades separated by a uniform spacing h. It is well known that the potential flow past an isolated airfoil can be easily solved using higher order vortex panel methods, where the airfoil is discretized into panels with each panel consisting of a continuous vortex sheet whose strength has to be determined. No-penetration condition on each panel, and the Kutta condition at the trail edge provide the complete set of linear differential equations with which the strength of the vortex sheet on each panel can be determined. \\
+For a single conformal transformation, the mapping used is $z_2 = \tanh \Big( \frac{\pi z_1}{h}\Big) $ where h is the spacing between the blades in the linear cascade in the physical $z_1$ plane. The region far upstream of the cascade in the z1 plane is mapped to the point (+1,0) and the incoming flow in the z1 plane may be represented by a combination of a source and a point vortex at (+1,0). The point source of strength $Q = V_1 h cos(\alpha)$ represents the flow rate between two blades that is dependent on the horizontal velocity component while the vertical velocity component is represented by a point vortex $\Gamma_up = V_1 h sin(\alpha) $ where V1 and $\alpha_1$ are the inlet flow velocity and angle of inclination far upstream of the cascade. Mass conservation requires the sink magnitude to be the same as that of the source, while the downstream vertical velocity component, represented by the point vortex will change from the upstream value and needs to be determined.\\
+The single closed contour, now in the z2 plane, is split up into a large number of discrete panels. Higher order vortex panel method having a linear variation of vorticity within the panel is used. There are m+1 unknowns from the unknown vorticity strengths. The vorticity at the sink location is an additional unknown. This brings the total unknowns to m+1. The no-penetration at the control points and the Kutta condition at the trailing edge yield m+1 equations. The extra (m+2) equation is given by the fact that the z1 plane the change in vertical velocity from far upstream to far downstream should be equal to the circulation around one blade. \\
+Consider the net circulation around the blade. \\
+\begin{equation}
+\Gamma_{blade} = h(V_{1} sin(\alpha_1) + V_{2} sin(\alpha_2))
+\end{equation}
+where alpha 1 and alpha 2 are the angles that V1 and V2 make with the horizontal. Noting that $\Gamma_{downstream} = V_2 h sin(\alpha_2)$ we may re-write equation 1 as:
+\begin{equation}
+\Gamma_{blade} - \Gamma_{downstream} = V_{1} h sin(\alpha_1)
+\end{equation}
+This provides an equation for gamma downstream since the inlet conditions V1 and alpha 1 are known and the gamma blade can be easily expressed in terms of the summation of vorticity of the panels. After this is solved we can transform the velocities in the z2 plane back to the z1 plane.
+\end{document}
+
